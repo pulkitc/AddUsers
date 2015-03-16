@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <link rel="shortcut icon" href="//jquery.com/jquery-wp-content/themes/jquery.com/i/favicon.ico">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    
+  </head>
+  <title>
+    {{pagename || 'Add users'}}
+  </title>
+  <body>
+    <div class=form>
+      <div class="form-group">
+        
+        <label for="name">
+          Name
+        </label>
+        <input type=text id=name required placeholder="Enter Name">
+        <br/>
+      </div>
+      <div class="form-group">
+        <label for="phone">
+          Mobile 
+        </label>
+        <input type=tel id=mobNum placeholder="Enter Mobile No.">
+        <br/>
+      </div>
+      <div class="form-group">
+        <label for="email">
+          Email
+        </label>
+        <input type=email id=email placeholder="Enter Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+        <br/>
+      </div>
+      <input type=button value='Add User' id='addUser' class="btn btn-default">
+      <br/>
+      
+    </div>
+    <br/>
+    <div id='status'>
+    </div>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
+    
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js">
+    </script>
+    <script>
+      $(document).ready(function(){
+        $('#addUser').click(function(){
+          name=$('#name').val();
+          mob=$('#mobNum').val();
+          email=$('#email').val();
+          
+          
+		  pattern=/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+          if(pattern.test( email ) && email)
+            alert('email valid');
+        else alert('email invalid');
+        if(name=="")
+          $('#status').html($("#status").val()+"<b class=error>Name Required</b>");
+        else{
+          $('#status').html("");
+          $.post('/users/add',{
+            name:name,mob:mob,email:email}
+                 ,function(data,status){
+                   $('#status').html(data);
+                 }
+                ).error(function(err){});
+          
+        }
+        
+      });
+                      });
+    </script>
+  </body>
+</html>
