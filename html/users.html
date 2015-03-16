@@ -1,0 +1,45 @@
+<html>
+  <title>
+    Users Info
+  </title>
+  <head>
+    <link rel="shortcut icon" href="//jquery.com/jquery-wp-content/themes/jquery.com/i/favicon.ico">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js">
+    </script>
+  </head>
+  <body>
+    <h1 class=brand>
+      All Users
+    </h1>
+    <table class=table>
+      <th>
+        <tr>
+          <td>
+            Name
+          </td>
+          <td>
+            Mobile
+          </td>
+          <td>
+            Email
+          </td>
+        </tr>
+      </th>
+      {% for user in users %}
+      <tr>
+        <td>
+          {{user.name}}
+        </td>
+        <td>
+          {{user.mobileNum}}
+        </td>
+        <td>
+          {{user.emailId}}
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  
+  </body>
+</html>
