@@ -5,6 +5,9 @@
   <head>
     <link rel="shortcut icon" href="//jquery.com/jquery-wp-content/themes/jquery.com/i/favicon.ico">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
+	
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js">
     </script>
   </head>
@@ -32,14 +35,36 @@
           {{user.name}}
         </td>
         <td>
-          {{user.mobileNum}}
+          {{user.mobile}}
         </td>
         <td>
-          {{user.emailId}}
+          {{user.email}}
         </td>
       </tr>
       {% endfor %}
     </table>
+  <style>
+		body { 
+			background: url('http://www.webdesign.org/img_articles/20826/2.jpg') no-repeat center center fixed; 
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+			opacity: 1.4;
+			filter: alpha(opacity=40);
+			padding:10px;
+			}
+		
+		
+		table,h1{
+			font-family: 'Play', sans-serif,bold;
+			#background-color: #fff;
+			border-radius:4px;
+			#opacity: 0.6;
+			#filter: alpha(opacity=60);
   
+						}
+		
+	</style>
   </body>
 </html>
