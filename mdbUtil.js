@@ -21,7 +21,7 @@ var Errors = new mongoose.Schema({
 module.exports = {
 
 	open: function( callback ) {
-	mongoose.connect( "mongodb://pc:pc123789@ds055680.mongolab.com:55680/ppmongoz", function( err ) {
+	mongoose.connect( "mongodb://127.0.0.1:27017/users", function( err ) {
 
 		return callback( err );
 																									});
