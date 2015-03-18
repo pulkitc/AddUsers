@@ -1,19 +1,27 @@
 {
   "name": "ProjectUser",
-  "version": "0.0.1",
-  "description": "Test project playport",
+  "version": "0.0.1-5",
+  "description": "Test project",
   "main": "index.js",
   "scripts": {
-    
+    "start": "node index.js"
   },
   "author": "pulkitC",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.4.9",
     "express": "^4.12.2",
     "gulp": "^3.8.11",
     "gulp-jshint": "^1.9.2",
     "gulp-nodemon": "^1.0.5",
     "mongodb": "^1.4.34",
+    "mongoose": "^3.8.25",
+    "parent-require": "^1.0.0",
     "swig": "^1.4.2"
-  }
+  },
+  "subdomain": "playportTest",
+  "engines": {
+    "node": "0.10.x"
+  },
+  "devDependencies": {}
 }
